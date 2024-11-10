@@ -19,7 +19,7 @@ function insertionSort(arr) {
   */
 
   // Your code here
-  console.log(arr); // [2,4,6,8,1,3,5,7,9];
+  // console.log(arr); // [2,4,6,8,1,3,5,7,9];
   let sorted = [];
 
   for (let i = arr.length - 1; i >= 0; i--) {
@@ -42,7 +42,6 @@ function insertionSort(arr) {
     console.log(sorted.join())
   }
 
-  console.log(sorted);
   return sorted;
 }
 
@@ -65,7 +64,25 @@ function insertionSortInPlace(arr) {
   Return the mutated array
   */
 
-  // Your code here
+  // Your code here // [2,4,6,8,1,3,5,7,9];
+  let divide = 0;
+  let temp = arr[divide];
+
+  for (let i = 0; i < arr.length; i++) {
+    let idx = divide;
+
+    while(arr[idx - 1] > temp) {
+        arr[idx] = arr[idx - 1];
+        idx--;
+    }
+    // Once false we insert the temp
+    arr[idx] = temp;
+    divide++;
+    temp = arr[divide];
+    console.log(arr.join());
+  }
+
+  return arr;
 }
 
 module.exports = [insertionSort, insertionSortInPlace];
