@@ -19,6 +19,31 @@ function insertionSort(arr) {
   */
 
   // Your code here
+  console.log(arr); // [2,4,6,8,1,3,5,7,9];
+  let sorted = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    let num = arr[i];
+    sorted.push(num);
+    let idx = sorted.length - 1;
+    let temp = sorted[sorted.length - 1];
+
+    for (let j = sorted.length - 1; j > 0; j--) {
+
+      if (sorted[idx - 1] > temp) {
+        sorted[idx] = sorted[idx - 1];
+        idx--;
+      }
+
+
+    }
+
+    sorted[idx] = temp;
+    console.log(sorted.join())
+  }
+
+  console.log(sorted);
+  return sorted;
 }
 
 // In-place Insertion Sort
