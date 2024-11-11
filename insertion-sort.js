@@ -22,7 +22,9 @@ function insertionSort(arr) {
   // console.log(arr); // [2,4,6,8,1,3,5,7,9];
   let sorted = [];
 
+  // First attempt
   for (let i = arr.length - 1; i >= 0; i--) {
+    console.log(sorted.join())
     let num = arr[i];
     sorted.push(num);
     let idx = sorted.length - 1;
@@ -35,12 +37,50 @@ function insertionSort(arr) {
         idx--;
       }
 
-
     }
 
     sorted[idx] = temp;
-    console.log(sorted.join())
   }
+
+  // Second Attempt
+  // for (let i = arr.length - 1; i >= 0; i--) {
+  //   let num = arr[i];
+  //   sorted.unshift(num);
+  //   let idx = 0;
+  //   // We would need to sort.unshift(num) with this strat
+  //   // We still have the logic of keeping the left side sorted and
+  //   // the right unsorted
+
+  //   while (idx < sorted.length - 1) {
+
+  //     if (sorted[idx] > sorted[idx + 1]) {
+  //       // sorted[idx + 1] = sorted[idx];
+  //       [sorted[idx], sorted[idx + 1]] = [sorted[idx  + 1], sorted[idx]];
+  //     }
+
+  //     idx++;
+  //   }
+  //   console.log(sorted.join());
+  // }
+
+  // let unsorted = arr.slice();
+
+  // let divide = 0;
+  // let temp = arr[divide];
+
+  // for (let i = 0; i < unsorted.length; i++) {
+  //   let idx = divide;
+
+  //   while(unsorted[idx - 1] > temp) {
+  //     unsorted[idx] = unsorted[idx - 1];
+  //     idx--;
+  //   }
+  //   // Once false we insert the temp
+  //   unsorted[idx] = temp;
+  //   divide++;
+  //   temp = unsorted[divide];
+  //   console.log(unsorted.join());
+  // }
 
   return sorted;
 }
